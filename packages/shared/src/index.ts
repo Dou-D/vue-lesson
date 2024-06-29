@@ -1,3 +1,3 @@
-export function isObject(target: unknown) {
-    return Object.prototype.toString.call(target) === '[object Object]';
+export function isObject(target: Record<any, any>) {
+    return target !== null && typeof target === 'object'
 }

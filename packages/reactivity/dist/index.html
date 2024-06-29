@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script type="module">
+      import { reactive, effect } from "./reactivity.js";
+      const obj = { name: "jw", age: 30 }
+      const state1 = reactive(obj);
+      const box = document.querySelector("#box");
+      box.innerHTML = state1.age;
+      const state2 = reactive(state1);
+      console.log(state1 === state2);
+    </script>
+  </body>
+</html>
